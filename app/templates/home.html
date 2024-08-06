@@ -1,11 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sai Music, Bhadrak</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <style>
+        .header {
+            background-image: url("{% static 'images/header2.jpg' %}");
+        }
+    </style>
 </head>
+
 <body>
-    <center><h1>Sai Music</h1></center>
+    <section class="header">
+        <div>
+            <h1>SAI MUSIC</h1>
+            <h2>Truss Light & DJ Sound</h2>
+            <h3>Music is the soundtrack of your life. Let us make your<br>event unforgettable.</h3>
+            <a href="" class="cntr"><div class="book">Book Now</div></a>
+        </div>
+    </section>
+    <section class="card1">
+        <br><br><br>
+        <h1>Religious Wedding</h1>
+        <div class="cntr">
+            <div class="side">
+                <h2>A religious wedding ceremony is a sacred and traditional event that celebrates the union of two individuals in accordance with the customs, rituals, and beliefs of their faith. It typically involves various symbolic gestures, prayers, blessings, and readings from religious texts that signify the commitment and spiritual significance of marriage</h2>
+            </div>
+            <div class="side2">
+                <img src="https://images.ctfassets.net/77l22z9el0aa/6V8yIOmS3LBVMBJHp6gWhg/deca065a855a5f9c4618a8d6e1a5e44c/AntonDrummondPhotography_HeroImage_1080x720.jpg" alt="">
+                <img src="https://www.brides.com/thmb/VnAlJAzPcatFEfwfOvqwfCd7i7Y=/1500x0/filters:no_upscale():max_bytes(200000):strip_icc()/RECIRC4-0de601149cf7459faf7dd4347f18aec7.jpg" alt="">
+            </div>
+        </div><br>
+        <img src="{% static 'images/wave1.jpg' %}" alt="">
+    </section>
+    <section class="card1">
+        <br>
+        <h1 style="color: rgb(82, 82, 255);">Galary</h1>
+
+        <div class="galary">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/020/399/200/small_2x/disc-jockey-esport-mascot-logo-design-vector.jpg" alt="">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/020/399/200/small_2x/disc-jockey-esport-mascot-logo-design-vector.jpg" alt="">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/020/399/200/small_2x/disc-jockey-esport-mascot-logo-design-vector.jpg" alt="">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/020/399/200/small_2x/disc-jockey-esport-mascot-logo-design-vector.jpg" alt="">
+        </div>
+        <a href="" class="cntr"><div class="book">Book Now</div></a>
+    </section>
 </body>
+
 </html>
