@@ -23,4 +23,7 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('admin/', views.admin_login, name='admin_login'),
     path('admin_create/', views.admin_create, name='admin_create'),
+    path('admin_verification/<int:admin_user_id>/', views.admin_verification, name='admin_verification'),
+    path('admin_dashboard/', views.admin_dashboard, name='admin_dashboard'),
+
 ]
