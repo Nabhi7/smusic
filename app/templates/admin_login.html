@@ -4,43 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
     <style>
-        h1{
-            text-align: center;
-            margin: 120px auto 50px;
-        }
-        .row{
-            display: flex;
-            justify-content: center;
-        }
-        .box{
-            width: 300px;
-            height: 150px;
-            box-shadow: 2px 2px 10px black;
-            padding: 20px;
-            border-radius: 20px;
-            input{
-                width: 98%;
-                height: 34px;
-                margin-top: 20px;
-            }
-            button{
-                margin-top: 40px;
-                padding: 10px;
-                border:none;
-                border-radius: 10px;
-            }
-        }
+       
     </style>
 </head>
 <body>
-    <h1>Admin Login</h1>
+    
     <div class="row">
         <div class="box">
+            <h1>Admin Login</h1>
             <form action="" method="post">
                 {% csrf_token %}
                 <input type="email" name="email" placeholder="Enter Your Email" id="email">
-                <div class="row"><button type="submit">Proceed</button></div>
+                <div class="row2"><button type="submit">Proceed</button></div>
             </form>
         </div>
     </div>
