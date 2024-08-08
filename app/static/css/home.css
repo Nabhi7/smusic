@@ -12,7 +12,7 @@ header{
         margin-left: 20px;
         font-size: 20px;
         background-color: purple;
-        padding: 6px 12px;
+        padding: 6px 20px;
         border-radius: 20px;
         transition: all 0.2s;
     }
@@ -196,4 +196,8 @@ a {
     img{
         width: 100%;
     }
+}
+
+@media only screen and (min-width: 720px) {
+
 }

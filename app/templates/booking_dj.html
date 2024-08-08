@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Picker</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/booking.css' %}">
+</head>
+
+<body>
+    <h1>DJ</h1>
+    <div class="cntr">
+        <h3>Choose a date</h3>
+    </div>
+    <div class="cntr">
+        <div class="dates" id="datesContainer">
+            <!-- Dates will be dynamically added here -->
+        </div>
+    </div><br>
+    <div class="djs">
+        <div class="dj">
+            <img src="https://www.livelaw.in/h-upload/2022/10/22/440584-dj-vehicle.jpg" alt="">
+            <h4>32,000</h4>
+            <p>
+                vehice name <br>
+                6 speakers <br>
+                10 lights <br>
+            </p>
+            <div class="cntr"><button>Book Now</button></div>
+        </div>
+        <div class="dj">
+            <img src="https://www.livelaw.in/h-upload/2022/10/22/440584-dj-vehicle.jpg" alt="">
+            <h4>40,000</h4>
+            <p>
+                vehice name <br>
+                6 speakers <br>
+                10 lights <br>
+            </p>
+            <div class="cntr"><button>Book Now</button></div>
+        </div>
+        <div class="dj">
+            <img src="https://www.livelaw.in/h-upload/2022/10/22/440584-dj-vehicle.jpg" alt="">
+            <h4>85,000</h4>
+            <p>
+                vehice name <br>
+                6 speakers <br>
+                10 lights <br>
+            </p>
+            <div class="cntr"><button>Book Now</button></div>
+        </div>
+        <div class="dj">
+            <img src="https://www.livelaw.in/h-upload/2022/10/22/440584-dj-vehicle.jpg" alt="">
+            <h4>88,000</h4>
+            <p>
+                vehice name <br>
+                6 speakers <br>
+                10 lights <br>
+            </p>
+            <div class="cntr"><button>Book Now</button></div>
+        </div>
+    </div>
+
+    <script>
+        function formatDate(date) {
+            const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+            return {
+                day: dayNames[date.getDay()],
+                date: date.getDate()
+            };
+        }
+
+        function generateDates(selectedDate) {
+            const datesContainer = document.getElementById('datesContainer');
+            datesContainer.innerHTML = ''; // Clear previous dates
+
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            for (let i = -10; i <= 10; i++) {
+                const date = new Date(selectedDate);
+                date.setDate(selectedDate.getDate() + i);
+
+                if (date >= today) {
+                    const { day, date: dayNum } = formatDate(date);
+
+                    const dateDiv = document.createElement('div');
+                    dateDiv.classList.add('date');
+                    if (i === 0) dateDiv.classList.add('selected');
+
+                    dateDiv.innerHTML = `
+                        <h4>${day}</h4>
+                        <h2>${dayNum}</h2>
+                        <div class="cntr">
+                            <div class="avalability"></div>
+                            <div class="avalability"></div>
+                            <div class="avalability"></div>
+                            <div class="avalability"></div>
+                        </div>
+                    `;
+
+                    // Event listener to handle date selection
+                    dateDiv.addEventListener('click', () => {
+                        document.querySelectorAll('.date').forEach(el => el.classList.remove('selected'));
+                        dateDiv.classList.add('selected');
+                        // Center the selected date
+                        dateDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                    });
+
+                    datesContainer.appendChild(dateDiv);
+                }
+            }
+
+            // Center the initially selected date
+            const selectedDateDiv = datesContainer.querySelector('.selected');
+            if (selectedDateDiv) {
+                selectedDateDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            }
+        }
+
+        const selectedDate = new Date(); // Default to today's date
+        selectedDate.setFullYear(2024); // Set the year (use current year if not changing)
+        selectedDate.setMonth(7); // Set the month (0-indexed, so 7 is August)
+        selectedDate.setDate(28); // Set the date to 21
+        generateDates(selectedDate);
+    </script>
+</body>
+
+</html>

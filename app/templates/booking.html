@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Picker</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/booking.css' %}">
+</head>
+
+<body>
+    <br><br>
+    <h1>Continue Booking</h1>
+    <br><br>
+    <div class="catagory">
+        <a href="{% url 'booking_dj' %}" class="cat-dj">
+            DJs
+        </a>
+        <a href="" class="cat-dj">
+            Lights
+        </a>
+        <a href="" class="cat-dj">
+            Speakers
+        </a>
+    </div>
+    <div class="desc">
+        Book top-tier DJs, state-of-the-art lighting, and premium sound systems for your next event. Whether it's a wedding, corporate function, or private party, our expert team will create an unforgettable experience tailored to your needs. Elevate your celebration with the best in entertainment and ambiance.
+    </div>
+</body>
+
+</html>

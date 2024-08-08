@@ -53,3 +53,12 @@ def admin_create(request):
 
 def admin_dashboard(request):
     return render(request, 'admin_dashboard.html')
+
+def check_status(request):
+    return render(request, 'check_status.html')
+
+def booking_dj(request):
+    return render(request, 'booking_dj.html')
+
+def booking(request):
+    return render(request, 'booking.html')

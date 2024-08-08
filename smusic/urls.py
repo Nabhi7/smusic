@@ -25,5 +25,10 @@ urlpatterns = [
     path('admin_create/', views.admin_create, name='admin_create'),
     path('admin_verification/<int:admin_user_id>/', views.admin_verification, name='admin_verification'),
     path('admin_dashboard/', views.admin_dashboard, name='admin_dashboard'),
+    path('check_status/', views.check_status, name='check_status'),
+
+    # Booking
+    path('booking/', views.booking, name='booking'),
+    path('booking_dj/', views.booking_dj, name='booking_dj'),
 
 ]
