@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
 }
 
 html {
@@ -16,7 +17,6 @@ header{
     justify-content: space-between;
     h1{
         color: rgb(255, 196, 0);
-        /* font-size: 70px; */
         font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         margin: -5px 0;
     }
@@ -231,6 +231,102 @@ a {
     }
 }
 
-@media only screen and (min-width: 720px) {
-
+@media only screen and (max-width: 720px) {
+    .header{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        h1 {
+            color: rgb(255, 196, 0);
+            font-size: 50px;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin: 100px 10px 10px;
+        }
+    
+        h2 {
+            font-size: 2rem;
+        }
+    
+        h3 {
+            font-size: 0.7rem;
+        }
+    
+        .avalabilities{
+            text-align: center;
+            h3{
+                padding: 15px;
+                font-size: 0.9rem;
+            }
+        }
+    }
+    .book {
+        width: 100px;
+        font-size: 15px;
+        margin: 20px;
+    }
+    header{
+        h1{
+            margin: -5px 0;
+            font-size: larger;
+        }
+        a{
+            color: white;
+            margin-left: 10px;
+            font-size: 12px;
+            background-color: purple;
+            padding: 5px 15px;
+            border-radius: 20px;
+            transition: all 0.2s;
+        }
+    }
+    .card1{
+        h1{
+            font-size: 30px;
+            margin: 10px auto 40px;
+        }
+        .side {
+            width: 90vw;
+            margin: auto 5vw;
+            text-align: center;
+            line-height: 20px;
+            font-size: 2vw;
+            font-weight: normal !important;
+        }
+        .cntr{
+            flex-direction: column;
+        }
+        .side2 {
+            width: 90vw;
+            margin: 20px 5vw;
+            display: flex;
+            justify-content: space-evenly;
+    
+            img {
+                height: 30vw;
+                width: auto;
+                border-radius: 20px;
+            }
+        }
+    }
+    .connect{
+        flex-direction: column;
+        padding: 10px 0px;
+        h1 {
+            margin: 20px auto;
+        }
+        .left {
+            width: 100vw;
+            border-right: none;
+        }
+        .right {
+            width: 100vw;
+            border-right: 2px solid white;
+            h1 {
+                margin: 50px auto 30px;
+            }
+        }
+        .cntr{
+            flex-direction: row;
+        }
+    }
 }
