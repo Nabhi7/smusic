@@ -15,12 +15,20 @@
     <div class="row">
         <div class="box">
             <h1>Admin Login</h1>
-            <form action="" method="post">
+            <form action="" method="post" onsubmit="handleSubmit()">
                 {% csrf_token %}
                 <input type="email" name="email" placeholder="Enter Your Email" id="email">
-                <div class="row2"><button type="submit">Proceed</button></div>
+                <div class="row2"><button type="submit" id="submitButton">Proceed</button></div>
             </form>
         </div>
     </div>
+
+    <script>
+        function handleSubmit() {
+            const submitButton = document.getElementById('submitButton');
+            submitButton.disabled = true;
+            submitButton.textContent = "Please wait...";
+        }
+    </script>
 </body>
 </html>
