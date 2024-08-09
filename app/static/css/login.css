@@ -41,5 +41,9 @@ h1{
         background-color: rgb(195, 0, 0);
         color: white;
         font-weight: bold;
+        transition: all 0.3s;
+    }
+    button:hover{
+        transform: scale(0.9);
     }
 }

@@ -16,15 +16,30 @@
 
 <body>
     <header>
-        <a href="{% url 'check_status' %}">Status</a>
-        <a href="{% url 'admin_login' %}">Login</a>
+        <h1>SAI MUSIC</h1>
+        <div>
+            <a href="{% url 'check_status' %}">Status</a>
+            <a href="{% url 'admin_login' %}">Login</a>
+        </div>
     </header>
     <section class="header">
         <div>
             <h1>SAI MUSIC</h1>
             <h2>Truss Light & DJ Sound</h2>
             <h3>Music is the soundtrack of your life. Let us make your<br>event unforgettable.</h3>
-            <a href="{% url 'booking' %}" class="cntr"><div class="book">Book Now</div></a>
+            <div class="cntr">
+                <a href="{% url 'booking' %}" class="cntr"><div class="book">Book Now</div></a>
+                <a href="#contact" class="cntr"><div class="book" style="background-color: rgb(198, 35, 35); color: white;">Contact Us</div></a>
+            </div>
+        </div>
+        <div>
+            <div class="avalabilities">
+                <h3>Different varities of DJs</h3>
+                <h3>Sparling lasser & non-lesser lights</h3>
+                <h3>Vibrating High Qality Speakers</h3>
+                <h3>1000+ Happy Celebrations</h3>
+                <h3>4000+ Satisfied Customers</h3>
+            </div>
         </div>
     </section>
     <section class="card1">
@@ -66,7 +81,7 @@
         </div>
     </section>
     <section class="card1">
-        <div class="connect">
+        <div class="connect" id="contact">
             <div class="left">
                 <h1>Our Coordinators</h1>
                 <div class="cntr">
@@ -76,8 +91,8 @@
                 <h5>+91 7077665833</h5>
                 <h5>abhinandanbablu18@gmail.com</h5>
                 <div class="cntr">
-                    <a href=""><img src="{% static 'images/dialer.png' %}" alt=""></a>
-                    <a href=""><img src="{% static 'images/mail.png' %}" alt=""></a>
+                    <a href="tel:+917077665833"><img src="{% static 'images/dialer.png' %}" alt=""></a>
+                    <a href="mailto:abhinandanbablu18@gmail.com"><img src="{% static 'images/mail.png' %}" alt=""></a>
                     <a href=""><img src="{% static 'images/instagram (1).png' %}" alt=""></a>
                 </div>
             </div>
@@ -87,7 +102,7 @@
                     <a href=""><img src="{% static 'images/mail.png' %}" alt=""></a>
                     <a href=""><img src="{% static 'images/youtube (1).png' %}" alt=""></a>
                     <a href=""><img src="{% static 'images/facebook (3).png' %}" alt=""></a>
-                    <a href=""><img src="{% static 'images/instagram (1).png' %}" alt=""></a>
+                    <a href="https://www.instagram.com/smusicbhadrak_7/?fbclid=IwY2xjawEi6GhleHRuA2FlbQIxMAABHYenRdvnZ6Hye8ircyHidfeitcstvEvwXzxRNCZTaMBtks49SGJkqM0QcA_aem_Nwd3g1whwWIpptFRqwTaug"><img src="{% static 'images/instagram (1).png' %}" alt=""></a>
                 </div>
                 <div class="responsive-map">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11963.324350819881!2d86.57772732443597!3d21.03185983534933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1bf541ba0ee375%3A0xd615f8a2993d5e0d!2sS%20MUSIC%20BHADRAK!5e0!3m2!1sen!2sin!4v1723027000803!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                </div>
