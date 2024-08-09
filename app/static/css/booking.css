@@ -102,31 +102,55 @@ a{
 .catagory{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     .cat-dj{
-        margin-top: 30px;
+        margin-top: 20px;
         width: 90%;
         aspect-ratio: 2;
-        background-image: url("https://i.ytimg.com/vi/YoapuNLVUF8/maxresdefault.jpg");
+        background-image: url("https://i.ytimg.com/vi/pXmYk1Wuqa0/maxresdefault.jpg");
         background-size: cover;
         border-radius: 20px;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 70px;
+        font-size: 90px;
         font-weight: bolder;
         text-shadow: 2px 2px 10px black;
         color: rgba(255, 255, 255, 0.577);
         transition: all 0.3s;
     }
-    .cat-dj:nth-child(1){
-        font-size: 90px;
-        background-image: url("https://i.ytimg.com/vi/pXmYk1Wuqa0/maxresdefault.jpg");
+    .cat-oth{
+        margin-top: 18px;
+        width: 43%;
+        aspect-ratio: 1.1;
+        /* background-image: url("https://i.ytimg.com/vi/YoapuNLVUF8/maxresdefault.jpg"); */
+        background-size: cover;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align:center;
+        justify-content: flex-end;
+        font-size: 25px;
+        font-weight: bolder;
+        text-shadow: 2px 2px 10px black;
+        color: rgb(255, 255, 255);
+        transition: all 0.3s;
+        padding-bottom: 15px;
     }
-    .cat-dj:nth-child(3){
+    .cat-oth:nth-child(2){
+        background-image: url("https://shaadiwish.com/blog/wp-content/uploads/2022/08/accent-fairy-lights-decor-17.jpg");
+    }
+    .cat-oth:nth-child(3){
         background-image: url("https://t3.ftcdn.net/jpg/06/60/12/92/360_F_660129269_rqFR78uAZ8MCUuLbvo9WLoJvsyUXkG8f.jpg");
     }
-    .cat-dj:hover{
+    .cat-oth:nth-child(4){
+        background-image: url("https://5.imimg.com/data5/ANDROID/Default/2021/5/IP/IA/BO/13372070/product-jpeg.jpg");
+    }
+    .cat-oth:nth-child(5){
+        background-image: url("https://5.imimg.com/data5/YK/LH/MY-49574912/platinum-package-500x500.jpg");
+    }
+    .cat-dj:hover, .cat-oth:hover{
         scale: 0.95;
     }
 }
@@ -176,6 +200,11 @@ a{
     .catagory{
         .cat-dj{
             width: 28%;
+            margin-top: 120px;
+        }
+        .cat-oth{
+            width: 14%;
+            aspect-ratio: 1;
             margin-top: 120px;
         }
     }
