@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Picker</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bookingOthers.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+</head>
+
+<body>
+    <div class="date-container">
+        <div>
+            <h1>Select The Date Range<br>to Book</h1>
+            <br>
+            <h4>Instructions :</h4>
+            <p>Click on the starting date of your booking.<br>Next, click on the ending date. All intermediate dates will be automatically selected.<br>If you only need a booking for a single day, simply select that one date only—no need to choose an ending date.</p>
+        </div>
+        <div class="choose-date" id="calendar">
+            <!-- Calendar will be rendered here -->
+        </div>
+    </div>
+    <div class="cntr"><a href="{% url 'booking_others' %}" class="btn">Proceed</a></div>
+    <!-- Include Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+    <script>
+        'use strict';
+
+        // Create DOM elements using vanilla JS
+        function createElement(tag, attrs = {}, children = []) {
+            const element = document.createElement(tag);
+
+            for (let key in attrs) {
+                if (key.startsWith("on")) {
+                    element.addEventListener(key.substring(2).toLowerCase(), attrs[key]);
+                } else if (key === "className") {
+                    element.className = attrs[key];
+                } else {
+                    element.setAttribute(key, attrs[key]);
+                }
+            }
+
+            children.forEach(child => {
+                if (typeof child === "string") {
+                    element.appendChild(document.createTextNode(child));
+                } else if (child instanceof Node) {
+                    element.appendChild(child);
+                }
+            });
+
+            return element;
+        }
+
+        function Heading({ date, changeMonth, resetDate }) {
+            return createElement("nav", { className: "calendar--nav" }, [
+                createElement("a", { onClick: () => changeMonth(date.month() - 1) }, ["<"]),
+                createElement("h1", { onClick: resetDate }, [
+                    date.format('MMMM'),
+                    createElement("small", {}, [date.format('YYYY')])
+                ]),
+                createElement("a", { onClick: () => changeMonth(date.month() + 1) }, [">"])
+            ]);
+        }
+
+        function Day({ currentDate, date, startDate, endDate, onClick }) {
+            let className = [];
+
+            if (moment().isSame(date, 'day')) {
+                className.push('active');
+            }
+
+            if (date.isSame(startDate, 'day')) {
+                className.push('start');
+            }
+
+            if (date.isBetween(startDate, endDate, 'day')) {
+                className.push('between');
+            }
+
+            if (date.isSame(endDate, 'day')) {
+                className.push('end');
+            }
+
+            if (!date.isSame(currentDate, 'month')) {
+                className.push('muted');
+            }
+
+            return createElement("span", {
+                onClick: () => onClick(date),
+                className: className.join(' ')
+            }, [date.date().toString()]);
+        }
+
+        function Days({ date, startDate, endDate, onClick }) {
+            const thisDate = moment(date);
+            const daysInMonth = thisDate.daysInMonth();
+            const firstDayOfMonth = thisDate.startOf('month').day();
+            const lastDayOfMonth = thisDate.endOf('month').day();
+            const days = [];
+            const labels = [];
+
+            // Day labels (e.g., Mon, Tue, Wed, etc.)
+            for (let i = 0; i < 7; i++) {
+                labels.push(createElement("span", { className: "label" }, [moment().day(i).format('ddd')]));
+            }
+
+            // Days from the previous month
+            for (let i = firstDayOfMonth - 1; i >= 0; i--) {
+                const day = moment(thisDate).subtract(1, 'month').endOf('month').date() - i;
+                days.push(Day({ currentDate: date, date: moment(thisDate).subtract(1, 'month').date(day), startDate, endDate, onClick }));
+            }
+
+            // Days of the current month
+            for (let i = 1; i <= daysInMonth; i++) {
+                days.push(Day({ currentDate: date, date: moment(thisDate).date(i), startDate, endDate, onClick }));
+            }
+
+            // Days from the next month
+            const totalDays = days.length;
+            for (let i = totalDays; i < 42; i++) {
+                days.push(Day({ currentDate: date, date: moment(thisDate).add(1, 'month').date(i - totalDays + 1), startDate, endDate, onClick }));
+            }
+
+            return createElement("nav", { className: "calendar--days" }, labels.concat(days));
+        }
+
+
+        function Calendar() {
+            let date = moment();
+            let startDate = moment().subtract(5, 'day');
+            let endDate = moment().add(3, 'day');
+
+            function resetDate() {
+                date = moment();
+                renderCalendar();
+            }
+
+            function changeMonth(month) {
+                date.month(month);
+                renderCalendar();
+            }
+
+            function changeDate(selectedDate) {
+                if (startDate === null || selectedDate.isBefore(startDate, 'day') || !startDate.isSame(endDate, 'day')) {
+                    startDate = moment(selectedDate);
+                    endDate = moment(selectedDate);
+                } else if (selectedDate.isSame(startDate, 'day') && selectedDate.isSame(endDate, 'day')) {
+                    startDate = null;
+                    endDate = null;
+                } else if (selectedDate.isAfter(startDate, 'day')) {
+                    endDate = moment(selectedDate);
+                }
+                renderCalendar();
+            }
+
+            function renderCalendar() {
+                const calendar = document.getElementById('calendar');
+                calendar.innerHTML = "";
+                calendar.appendChild(Heading({ date, changeMonth, resetDate }));
+                calendar.appendChild(Days({ date, startDate, endDate, onClick: changeDate }));
+            }
+
+            renderCalendar();
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            Calendar();
+        });
+    </script>
+</body>
+
+</html>
