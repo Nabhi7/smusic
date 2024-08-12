@@ -14,6 +14,9 @@ body {
         color: rgba(255, 196, 0, 0.708);
     }
 }
+.caption2{
+    display: none;
+}
 .cntr{
     display: flex;
     justify-content: center;
@@ -199,13 +202,14 @@ body {
     justify-content: space-between;
 }
 .options{
+    padding: 15px 0;
     button{
         border: none;
         border-radius: 20px;
         padding: 7px 15px;
         font-size: 17px;
         font-weight: bold;
-        margin: 20px 10px;
+        margin: 10px 5px 0;
         background-color: rgba(255, 255, 255, 0.292);
         color: white;
         transition: all 0.2s;
@@ -276,7 +280,17 @@ body {
 
 @media only screen and (max-width: 720px){
     .date-container{
+        .caption{
+            display: none;
+        }
         flex-direction: column;
+        text-align: center;
+        height: max-content;
+        padding-bottom: 40px;
+    }
+    .caption2{
+        display: block;
+        margin: 20px;
         text-align: center;
         p{
             width: 350px;
@@ -284,6 +298,7 @@ body {
             line-height: 20px;
             text-align: left;
             margin-bottom: 20px;
+            color: rgba(255, 196, 0, 0.708);
         }
         h4{
             margin: 10px;
@@ -291,6 +306,9 @@ body {
     }
     .choose-date{
         width: 300px;
+    }
+    .btn{
+        margin: 0 0 10px 0;
     }
     
     .djs{

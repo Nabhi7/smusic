@@ -15,14 +15,24 @@
         <div>
             <h1>Select The Date Range<br>to Book</h1>
             <br>
-            <h4>Instructions :</h4>
-            <p>Click on the starting date of your booking.<br>Next, click on the ending date. All intermediate dates will be automatically selected.<br>If you only need a booking for a single day, simply select that one date only—no need to choose an ending date.</p>
+            <div class="caption">
+                <h4>Instructions :</h4>
+                <p>Click on the starting date of your booking.<br>Next, click on the ending date. All intermediate dates
+                    will be automatically selected.<br>If you only need a booking for a single day, simply select that one
+                    date only—no need to choose an ending date.</p>
+            </div>
         </div>
         <div class="choose-date" id="calendar">
             <!-- Calendar will be rendered here -->
         </div>
     </div>
     <div class="cntr"><a href="{% url 'booking_others' %}" class="btn">Proceed</a></div>
+    <div class="caption2">
+        <h4>Instructions :</h4>
+        <p>Click on the starting date of your booking.<br>Next, click on the ending date. All intermediate dates will be
+            automatically selected.<br>If you only need a booking for a single day, simply select that one date only—no
+            need to choose an ending date.</p>
+    </div>
     <!-- Include Moment.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 

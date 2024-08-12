@@ -254,6 +254,9 @@ a {
     .left {
         width: 45vw;
         border-right: 2px solid white;
+        h1{
+            font-size: 27px
+        }
         h5{
             margin: 5px;
             color: gray;
@@ -441,6 +444,26 @@ a {
         .left {
             width: 100vw;
             border-right: none;
+            h1{
+                font-size: 22px;
+            }
+            h3{
+                font-size: 14px;
+            }
+            img{
+                width: 25px;
+            }
+            .prfle {
+                width: 90px !important;
+                border-radius: 50%;
+                margin: 10px auto;
+            }
+            h5{
+                font-size: 10px;
+            }
+            .cntr{
+                justify-content: space-evenly;
+            }
         }
         .right {
             width: 100vw;
