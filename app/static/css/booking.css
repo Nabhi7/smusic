@@ -69,26 +69,36 @@ a{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    flex-direction: column;
     color: purple;
     .dj{
-        width: 45%;
-        aspect-ratio: 0.7;
+        width: 90%;
+        /* aspect-ratio: 0.7; */
         background-color: white;
-        border: 2px solid white;
+        /* border: 2px solid white; */
         margin: 10px auto;
         border-radius: 20px;
         text-align: center;
+        padding-bottom: 10px;
         img{
             width: 100%;
             border-radius: 20px 20px 0 0;
         }
-        h4{
-            margin: 5px auto;
-            font-size: 100%;
+        .details{
+            width: 100%;
+            text-align: center;
+            h1{
+                margin: 10px 0;
+                color: black;
+            }
+            p{
+                margin: 0;
+            }
+            h2{
+                color: red;
+            }
         }
-        p{
-            margin: 10px;
-        }
+        
         button{
             border: none;
             background-color: green;
@@ -160,6 +170,29 @@ a{
     font-size: 12px;
     color: gray;
 }
+.catagory{
+    display: flex;
+    justify-content: center;
+    button{
+        border: none;
+        border-radius: 20px;
+        padding: 7px 15px;
+        font-size: 17px;
+        font-weight: bold;
+        margin: 5px 15px 15px;
+        background-color: rgba(255, 255, 255, 0.292);
+        color: white;
+        transition: all 0.2s;
+    }
+    button:hover{
+        background-color: #fff;
+        color: black;
+    }
+    .active{
+        background-color: #fff;
+        color: black;
+    }
+}
 
 
 @media only screen and (min-width: 720px) {
@@ -168,25 +201,39 @@ a{
         flex-wrap: wrap;
         justify-content: space-around;
         color: purple;
+        flex-direction: row;
         .dj{
-            width: 18%;
-            aspect-ratio: 0.7;
+            width: 45%;
+            aspect-ratio: 2;
             background-color: white;
-            border: 2px solid white;
+            /* border: 2px solid white; */
             margin: 10px auto;
             border-radius: 20px;
             text-align: center;
+            display: flex;
+            justify-content: space-between;
+            padding: 0%;
             img{
-                width: 100%;
-                border-radius: 20px 20px 0 0;
+                height: 100%;
+                width: 50%;
+                border-radius: 20px 0 0 20px;
             }
-            h4{
-                margin: 5px auto;
-                font-size: 100%;
+            .details{
+                width: 45%;
+                text-align: left;
+                h1{
+                    margin: 30px 0;
+                    text-align: left;
+                    color: black;
+                }
+                p{
+                    margin: 0;
+                }
+                h2{
+                    color: red;
+                }
             }
-            p{
-                margin: 10px;
-            }
+            
             button{
                 border: none;
                 background-color: green;

@@ -32,7 +32,13 @@
                 <p>
                     Speaker With Display
                 </p>
-                <div class="cntr"><button>Book Now</button></div>
+                <div class="plus-minus">
+                    <div class="number">
+                        <span class="minus">-</span>
+                        <input type="text" value="1"/>
+                        <span class="plus">+</span>
+                    </div>
+                </div>
             </div>
             <div class="dj">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyridawYGPIKGwupzyG_kZb6_7XgulzcVukw&s" alt="">
@@ -40,7 +46,13 @@
                 <p>
                     Square Speaker with 4 mini speakers
                 </p>
-                <div class="cntr"><button>Book Now</button></div>
+                <div class="plus-minus">
+                    <div class="number">
+                        <span class="minus">-</span>
+                        <input type="text" value="1"/>
+                        <span class="plus">+</span>
+                    </div>
+                </div>
             </div>
             <div class="dj">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkV4pd94hXWmJ52nzK8E8mFQdVHT6KMmO3VmL6W7AkbePrZ8dSvABYUpVYeUyJKiDrj2A&usqp=CAU" alt="">
@@ -48,7 +60,13 @@
                 <p>
                     Speaker With Display
                 </p>
-                <div class="cntr"><button>Book Now</button></div>
+                <div class="plus-minus">
+                    <div class="number">
+                        <span class="minus">-</span>
+                        <input type="text" value="1"/>
+                        <span class="plus">+</span>
+                    </div>
+                </div>
             </div>
             <div class="dj">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyridawYGPIKGwupzyG_kZb6_7XgulzcVukw&s" alt="">
@@ -56,7 +74,13 @@
                 <p>
                     Square Speaker with 4 mini speakers
                 </p>
-                <div class="cntr"><button>Book Now</button></div>
+                <div class="plus-minus">
+                    <div class="number">
+                        <span class="minus">-</span>
+                        <input type="text" value="1"/>
+                        <span class="plus">+</span>
+                    </div>
+                </div>
             </div>
             <div class="dj">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkV4pd94hXWmJ52nzK8E8mFQdVHT6KMmO3VmL6W7AkbePrZ8dSvABYUpVYeUyJKiDrj2A&usqp=CAU" alt="">
@@ -64,7 +88,13 @@
                 <p>
                     Speaker With Display
                 </p>
-                <div class="cntr"><button>Book Now</button></div>
+                <div class="plus-minus">
+                    <div class="number">
+                        <span class="minus">-</span>
+                        <input type="text" value="1"/>
+                        <span class="plus">+</span>
+                    </div>
+                </div>
             </div>
             <div class="dj">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyridawYGPIKGwupzyG_kZb6_7XgulzcVukw&s" alt="">
@@ -72,7 +102,13 @@
                 <p>
                     Square Speaker with 4 mini speakers
                 </p>
-                <div class="cntr"><button>Book Now</button></div>
+                <div class="plus-minus">
+                    <div class="number">
+                        <span class="minus">-</span>
+                        <input type="text" value="1"/>
+                        <span class="plus">+</span>
+                    </div>
+                </div>
             </div>
             <div class="dj">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkV4pd94hXWmJ52nzK8E8mFQdVHT6KMmO3VmL6W7AkbePrZ8dSvABYUpVYeUyJKiDrj2A&usqp=CAU" alt="">
@@ -80,11 +116,36 @@
                 <p>
                     Speaker With Display
                 </p>
-                <div class="cntr"><button>Book Now</button></div>
+                <div class="plus-minus">
+                    <div class="number">
+                        <span class="minus">-</span>
+                        <input type="text" value="1"/>
+                        <span class="plus">+</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    
+    <div class="cntr"><a href="{% url 'booking_others' %}" class="btn">Proceed</a></div><br>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        	$(document).ready(function() {
+			$('.minus').click(function () {
+				var $input = $(this).parent().find('input');
+				var count = parseInt($input.val()) - 1;
+				count = count < 1 ? 1 : count;
+				$input.val(count);
+				$input.change();
+				return false;
+			});
+			$('.plus').click(function () {
+				var $input = $(this).parent().find('input');
+				$input.val(parseInt($input.val()) + 1);
+				$input.change();
+				return false;
+			});
+		});
+    </script>
 </body>
 
 </html>
