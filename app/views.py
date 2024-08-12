@@ -57,8 +57,14 @@ def admin_dashboard(request):
 def check_status(request):
     return render(request, 'check_status.html')
 
+def booking(request):
+    return render(request, 'booking.html')
+
 def booking_dj(request):
     return render(request, 'booking_dj.html')
 
-def booking(request):
-    return render(request, 'booking.html')
+def booking_others(request):
+    return render(request, 'booking_others.html')
+    
+def booking_date(request):
+    return render(request, 'booking_date.html')
