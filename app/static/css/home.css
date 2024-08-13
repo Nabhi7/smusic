@@ -37,7 +37,7 @@ html {
         span{
             color: red;
             margin: auto 2px;
-            font-size: 38px;
+            font-size: 30px;
             animation: pulse 3.3s 1;
         }
         
@@ -101,6 +101,7 @@ header{
         span{
             color: red;
             margin: auto 2px;
+            font-size: 10px;
         }
         
     }
@@ -272,6 +273,12 @@ a {
         a:hover{
             scale: 1.1;
         }
+        .cntr{
+            justify-content: space-evenly;
+            .cntr{
+                justify-content: center;
+            }
+        }
     }
 
     .right {
@@ -323,6 +330,73 @@ a {
     }
 }
 
+.mob-l-2{
+    position: relative;
+    .text {
+        /* position: absolute; */
+        width: 600px;
+        /* left: 20px; */
+        /* margin-left: ; */
+        height: 40px;
+        /* top: 0%; */
+        /* margin-top: 0px; */
+      }
+      
+      p {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0;
+      }
+      
+      .word {
+        position: absolute;
+        opacity: 0;
+      }
+      
+      .letter {
+        display: inline-block;
+        position: relative;
+        /* float: left; */
+        transform: translateZ(25px);
+        transform-origin: 50% 50% 25px;
+      }
+      
+      .letter.out {
+        transform: rotateX(90deg);
+        transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      }
+      
+      .letter.behind {
+        transform: rotateX(-90deg);
+      }
+      
+      .letter.in {
+        transform: rotateX(0deg);
+        transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      
+      .wisteria {
+        color: #b359d9;
+      }
+      
+      .belize {
+        color: #4597cd;
+      }
+      
+      .pomegranate {
+        color: #ce4b3c;
+      }
+      
+      .green {
+        color: #16a085;
+      }
+      
+      .midnight {
+        color: #2c3e50;
+      }
+      
+}
+
 @media only screen and (max-width: 720px) {
     .loading{
         h1{
@@ -371,9 +445,12 @@ a {
         .avalabilities{
             text-align: center;
             h3{
-                padding: 15px;
-                font-size: 0.9rem;
+                padding: 10px;
+                font-size: 0.8rem;
+                border-radius: 0px;
                 margin: 5px;
+                background-color: transparent;
+                border-bottom: 2px solid rgba(128, 128, 128, 0.618);
             }
         }
     }
@@ -461,9 +538,7 @@ a {
             h5{
                 font-size: 10px;
             }
-            .cntr{
-                justify-content: space-evenly;
-            }
+            
         }
         .right {
             width: 100vw;
@@ -476,4 +551,22 @@ a {
             flex-direction: row;
         }
     }
+    .galary {
+        display: flex;
+        justify-content: space-evenly;
+        padding-bottom: 50px;
+        flex-wrap: wrap;
+    
+        img {
+            width: 40%;
+            border-radius: 20px;
+            margin-bottom: 30px;
+        }
+    }
+    .mob-l-2{
+        position: relative;
+        .text {
+            width: 200px;
+          }
+        }
 }

@@ -7,46 +7,30 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
     <style>
-        h1{
-            text-align: center;
-            margin: 50px auto;
-        }
-        .row{
-            display: flex;
-            justify-content: center;
-        }
-        .box{
-            width: 300px;
-            height: 300px;
-            box-shadow: 2px 2px 10px black;
-            padding: 20px;
-            border-radius: 20px;
-            input{
-                width: 98%;
-                height: 34px;
-                margin-top: 20px;
-            }
-            button{
-                margin-top: 40px;
-                padding: 10px;
-                border:none;
-                border-radius: 10px;
-            }
-        }
+       
     </style>
 </head>
 <body>
-    <h1>Add Admin</h1>
+    
     <div class="row">
         <div class="box">
-            <form action="" method="post">
+            <h1>Add Admin</h1>
+            <form action="" method="post" onsubmit="handleSubmit()">
                 {% csrf_token %}
-                <input type="text" name="name" placeholder="Name" id="name">
-                <input type="tel" name="phone" placeholder="Phone" id="phone">
-                <input type="email" name="email" placeholder="Email" id="email">
-                <div class="row"><button type="submit">Proceed</button></div>
+                <input type="text" name="name" placeholder="Name" id="name" required>
+                <input type="number" name="phone" placeholder="Phone" id="phone" required>
+                <input type="email" name="email" placeholder="Email" id="email" required>
+                <div class="row2"><button type="submit" id="submitButton">Proceed</button></div>
             </form>
         </div>
     </div>
+
+    <script>
+        function handleSubmit() {
+            const submitButton = document.getElementById('submitButton');
+            submitButton.disabled = true;
+            submitButton.textContent = "Please wait...";
+        }
+    </script>
 </body>
 </html>

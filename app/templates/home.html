@@ -18,13 +18,13 @@
     <section class="loading">
         <div>
             <h1>SAI MUSIC</h1>
-            <h5>DJ Abhi <span>&#10060</span> Rout Bros</h5>
+            <h5>DJ Abhi <span>&#10060</span> Rout Broz</h5>
         </div>
     </section>
     <header>
         <div>
             <h1>SAI MUSIC</h1>
-            <h5>DJ Abhi <span>&#10060</span> Rout Bros</h5>
+            <h5>DJ Abhi <span>&#10060</span> Rout Broz</h5>
         </div>
         <div>
             <a href="{% url 'check_status' %}">Status</a>
@@ -36,7 +36,15 @@
             <div class="mob-l-2">
                 <div style="display: flex;">
                     <h2>Make Your </h2>
-                    <h1>CELEBRATION</h1>
+                    <h1 class="text">
+                        <p>
+                            <span class="word ">CELEBRATION</span>
+                            <span class="word wisteria">MARRAGE</span>
+                            <span class="word belize">BHASANI</span>
+                            <span class="word pomegranate">FESTIVAL</span>
+
+                        </p>
+                    </h1>
                 </div>
                 <h2>Unforgottable</h2>
             </div>
@@ -103,13 +111,10 @@
         <h1 style="color: rgb(82, 82, 255);">Galary</h1>
 
         <div class="galary">
-            <img src="https://static.vecteezy.com/system/resources/thumbnails/020/399/200/small_2x/disc-jockey-esport-mascot-logo-design-vector.jpg"
-                alt="">
-            <img src="https://static.vecteezy.com/system/resources/thumbnails/020/399/200/small_2x/disc-jockey-esport-mascot-logo-design-vector.jpg"
-                alt="">
-            <img src="https://static.vecteezy.com/system/resources/thumbnails/020/399/200/small_2x/disc-jockey-esport-mascot-logo-design-vector.jpg"
-                alt="">
-            <img src="https://static.vecteezy.com/system/resources/thumbnails/020/399/200/small_2x/disc-jockey-esport-mascot-logo-design-vector.jpg"
+            <img src="{% static 'images/galary3.jpg' %}" alt="">
+            <img src="{% static 'images/galary1.jpg' %}" alt="">
+            <img src="{% static 'images/galary2.jpg' %}" alt="">
+            <img src="{% static 'images/galary4.jpg' %}"
                 alt="">
         </div>
     </section>
@@ -135,19 +140,18 @@
                         </div>
                     </div>
                     <div>
-                        <h1>Coordinators</h1>
+                        <h1>Coordinator</h1>
                         <div class="cntr">
                             <img class="prfle"
                                 src="https://thumbs.dreamstime.com/b/dj-avatar-icon-simple-style-illustration-vector-web-design-isolated-white-background-164370922.jpg"
                                 alt="">
                         </div>
-                        <h3>DJ Pappu</h3>
+                        <h3>DJ Pappu (Paresh)</h3>
                         <h5>+91 8917676498</h5>
-                        <h5>abhinandanbablu42526@gmail.com</h5>
+                        <h5>paresh662@gmail.com</h5>
                         <div class="cntr">
-                            <a href="tel:+917077665833"><img src="{% static 'images/dialer.png' %}" alt=""></a>
-                            <a href="mailto:abhinandanbablu18@gmail.com"><img src="{% static 'images/mail.png' %}"
-                                    alt=""></a>
+                            <a href="tel:+918917676498"><img src="{% static 'images/dialer.png' %}" alt=""></a>
+                            <a href="mailto:paresh662@gmail.com"><img src="{% static 'images/mail.png' %}" alt=""></a>
                             <a href=""><img src="{% static 'images/instagram (1).png' %}" alt=""></a>
                         </div>
                     </div>
@@ -184,6 +188,63 @@
                 document.getElementsByClassName('loading')[0].style.display = 'none';
             }, 5000);
         };
+
+        var words = document.getElementsByClassName('word');
+        var wordArray = [];
+        var currentWord = 0;
+
+        words[currentWord].style.opacity = 1;
+        for (var i = 0; i < words.length; i++) {
+            splitLetters(words[i]);
+        }
+
+        function changeWord() {
+            var cw = wordArray[currentWord];
+            var nw = currentWord == words.length - 1 ? wordArray[0] : wordArray[currentWord + 1];
+            for (var i = 0; i < cw.length; i++) {
+                animateLetterOut(cw, i);
+            }
+
+            for (var i = 0; i < nw.length; i++) {
+                nw[i].className = 'letter behind';
+                nw[0].parentElement.style.opacity = 1;
+                animateLetterIn(nw, i);
+            }
+
+            currentWord = (currentWord == wordArray.length - 1) ? 0 : currentWord + 1;
+        }
+
+        function animateLetterOut(cw, i) {
+            setTimeout(function () {
+                cw[i].className = 'letter out';
+            }, i * 80);
+        }
+
+        function animateLetterIn(nw, i) {
+            setTimeout(function () {
+                nw[i].className = 'letter in';
+            }, 340 + (i * 80));
+        }
+
+        function splitLetters(word) {
+            var content = word.innerHTML;
+            word.innerHTML = '';
+            var letters = [];
+            for (var i = 0; i < content.length; i++) {
+                var letter = document.createElement('span');
+                letter.className = 'letter';
+                letter.innerHTML = content.charAt(i);
+                word.appendChild(letter);
+                letters.push(letter);
+            }
+
+            wordArray.push(letters);
+        }
+
+        changeWord();
+        setInterval(changeWord, 4000);
+
+
     </script>
 </body>
 

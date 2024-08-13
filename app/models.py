@@ -4,7 +4,7 @@ from django.db import models
 class AdminUser(models.Model):
     name = models.CharField(max_length=255)
     phone = models.CharField(max_length=15)
-    email = models.EmailField(unique=True)
+    email = models.EmailField(unique=True, null=False)
     otp = models.CharField(max_length=6, blank=True, null=True)
     otp_created_at = models.DateTimeField(auto_now_add=True)
 

@@ -17,7 +17,78 @@ def admin_login(request):
             admin_user.otp = otp
             admin_user.save()
             sub = 'Sai Music Admin Verification'
-            msg = '<p>Your OTP : <b>'+str(otp)+'</b></p>'
+            msg = f'''
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <style>
+                        body {{
+                            font-family: Arial, sans-serif;
+                            line-height: 1.6;
+                            padding: 20px;
+                        }}
+                        .container {{
+                            max-width: 600px;
+                            margin: auto;
+                            padding: 20px;
+                            color: #ffffff;
+                            background-image: linear-gradient(-45deg, rgb(113, 0, 0), black, black, rgb(109, 2, 109));
+                            border-radius: 10px;
+                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                        }}
+                        .header {{
+                            text-align: center;
+                            margin-bottom: 20px;
+                        }}
+                        .header h1{{
+                            font-size: 40px;
+                            font-weight: bolder;
+                            color: rgb(255, 196, 0);
+                        }}
+                        .otp {{
+                            font-size: 24px;
+                            font-weight: bold;
+                            letter-spacing: 0.5cap;
+                            color: rgb(255, 196, 0);
+                            text-align: center;
+                        }}
+                        .button {{
+                            display: inline-block;
+                            margin-top: 20px;
+                            padding: 10px 20px;
+                            font-weight: bold;
+                            background-color: rgb(255, 196, 0);
+                            color: rgb(0, 0, 0);
+                            text-decoration: none;
+                            border-radius: 5px;
+                        }}
+                        .footer {{
+                            margin-top: 30px;
+                            text-align: center;
+                            color: #666;
+                            font-size: 12px;
+                        }}
+                    </style>
+                </head>
+                <body>
+                    <div class="container">
+                        <div class="header">
+                            <h1>SAI MUSIC</h1>
+                        </div>
+                        <p>Hello,</p>
+                        <p>To ensure the security of your account and To complete your verification, Please enter the following OTP provided below:</p>
+                        <p class="otp">{otp}</p>
+                        <p>Enter this code on the verification page to confirm your identity.It is valid for 2 minutes only.</p>
+                        <center><a href="https://saimusic.pythonanywhere.com" class="button">Explore</a></center>
+                        <div class="footer">
+                            <p>If you did not request this verification, please ignore this email.</p>
+                            <p>&copy; 2024 . SAIMUSIC . All rights reserved.</p>
+                        </div>
+                    </div>
+                </body>
+                </html>
+                '''
+            # '<p>Your OTP : <b>'+str(otp)+'</b></p>'
             femail = 'saswatkumar059@gmail.com'
             msg = EmailMultiAlternatives(sub, msg, femail,[email])
             msg.content_subtype='html'
