@@ -11,15 +11,22 @@
     <div class="row">
         <div class="box">
             <h1>Admin Verification</h1>
-            <form action="" method="post">
+            <form action="" method="post"onsubmit="handleSubmit()">
                 {% csrf_token %}
                 <input style="text-align: center;" type="number" name="otp" placeholder="Enter OTP here" id="otp">
                 <div style="text-align: center;"><br>
                     <p>OTP was sent to your registered email address. Please check and enter the otp within 2 minutes.</p>
                 </div>
-                <div class="row2"><button type="submit">Proceed</button></div>
+                <div class="row2"><button type="submit" id="submitButton">Proceed</button></div>
             </form>
         </div>
     </div>
+    <script>
+        function handleSubmit() {
+            const submitButton = document.getElementById('submitButton');
+            submitButton.disabled = true;
+            submitButton.textContent = "Please wait...";
+        }
+    </script>
 </body>
 </html>

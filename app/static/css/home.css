@@ -37,7 +37,7 @@ html {
         span{
             color: red;
             margin: auto 2px;
-            font-size: 38px;
+            font-size: 30px;
             animation: pulse 3.3s 1;
         }
         
@@ -101,6 +101,7 @@ header{
         span{
             color: red;
             margin: auto 2px;
+            font-size: 10px;
         }
         
     }
@@ -444,9 +445,12 @@ a {
         .avalabilities{
             text-align: center;
             h3{
-                padding: 15px;
-                font-size: 0.9rem;
+                padding: 10px;
+                font-size: 0.8rem;
+                border-radius: 0px;
                 margin: 5px;
+                background-color: transparent;
+                border-bottom: 2px solid rgba(128, 128, 128, 0.618);
             }
         }
     }
