@@ -4,20 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Date Picker</title>
+    <title>Sai Music - Booking</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/bookingOthers.css' %}">
 </head>
 
 <body>
-    <section class="card1">
+    <header id="header">
+        <div>
+            <img id="himage" src="{% static 'images/sai music logo.png' %}" alt="">
+            <!-- <h5>DJ Abhi <span>x</span> Rout Broz</h5> -->
+        </div>
+        <div>
+            <a href="{% url 'booking_date' %}" style="background-color: red;">Select Date</a>
+        </div>
+    </header>
+    <!-- <section class="card1">
         <div class="logo">
 
         </div>
         <div class="date">
             <a href="{% url 'booking_date' %}">Select Date</a>
         </div>
-    </section>
+    </section> -->
+    <br><br>
     <div class="options">
         <button class="active" >Lights</button>
         <button>Sound Systems</button>
