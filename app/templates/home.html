@@ -17,14 +17,16 @@
 <body>
     <section class="loading">
         <div>
-            <h1>SAI MUSIC</h1>
-            <h5>DJ Abhi <span>&#10060</span> Rout Broz</h5>
+            <img src="{% static 'images/sai music logo.png' %}" alt="">
+            <!-- <h1>SAI MUSIC</h1> -->
+            <!-- <h5>DJ Abhi <span>x</span> Rout Broz</h5> -->
+            <h5>In Association with Rout Broz</h5>
         </div>
     </section>
-    <header>
+    <header id="header">
         <div>
-            <h1>SAI MUSIC</h1>
-            <h5>DJ Abhi <span>&#10060</span> Rout Broz</h5>
+            <img id="himage" src="{% static 'images/sai music logo.png' %}" alt="">
+            <!-- <h5>DJ Abhi <span>x</span> Rout Broz</h5> -->
         </div>
         <div>
             <a href="{% url 'check_status' %}">Status</a>
@@ -111,13 +113,17 @@
         <h1 style="color: rgb(82, 82, 255);">Galary</h1>
 
         <div class="galary">
-            <img src="{% static 'images/galary3.jpg' %}" alt="">
+            <img src="{% static 'images/galary6.jpg' %}" alt="">
             <img src="{% static 'images/galary1.jpg' %}" alt="">
-            <img src="{% static 'images/galary2.jpg' %}" alt="">
+            <img src="{% static 'images/galary7.jpg' %}" alt="">
             <img src="{% static 'images/galary4.jpg' %}"
                 alt="">
         </div>
     </section>
+    <br>
+    <a href="{% url 'booking' %}" class="cntr">
+        <div class="book">Book Now</div>
+    </a>
     <section class="card1">
         <div class="connect" id="contact">
             <div class="left">
@@ -126,7 +132,7 @@
                         <h1>Administrator</h1>
                         <div class="cntr">
                             <img class="prfle"
-                                src="https://thumbs.dreamstime.com/b/dj-avatar-icon-simple-style-illustration-vector-web-design-isolated-white-background-164370922.jpg"
+                                src="{% static 'images/Abhinandan.jpg' %}"
                                 alt="">
                         </div>
                         <h3>Abhinandan Nayak</h3>
@@ -136,7 +142,7 @@
                             <a href="tel:+917077665833"><img src="{% static 'images/dialer.png' %}" alt=""></a>
                             <a href="mailto:abhinandanbablu18@gmail.com"><img src="{% static 'images/mail.png' %}"
                                     alt=""></a>
-                            <a href=""><img src="{% static 'images/instagram (1).png' %}" alt=""></a>
+                            <a href="https://www.instagram.com/aabhii__7?igsh=azNobXh2Y3kzZTA4"><img src="{% static 'images/instagram (1).png' %}" alt=""></a>
                         </div>
                     </div>
                     <div>
@@ -176,9 +182,6 @@
             </div>
         </div>
     </section>
-    <a href="{% url 'booking' %}" class="cntr">
-        <div class="book">Book Now</div>
-    </a>
     <section class="footer">
         <img src="{% static 'images/wave2.jpg' %}" alt="">
     </section>
@@ -246,6 +249,42 @@
 
 
     </script>
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            const himage = document.getElementById('himage');
+            const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+    
+            // Detect screen width
+            const screenWidth = window.innerWidth || document.documentElement.clientWidth;
+    
+            if (scrollPosition > 100) { // Trigger action after scrolling 100px
+                header.style.backgroundColor = 'rgba(0, 0, 0, 0.438)';
+                header.style.backdropFilter = 'blur(10px)';
+                header.style.webkitBackdropFilter = 'blur(10px)';
+    
+                if (screenWidth <= 768) { // Mobile screen size
+                    himage.style.width = "150px";
+                } else {
+                    himage.style.width = "180px";
+                }
+                himage.style.margin = "0 0 0 0";
+            } else {
+                header.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+                header.style.backdropFilter = 'blur(0px)';
+                header.style.webkitBackdropFilter = 'blur(0px)';
+    
+                if (screenWidth <= 768) { // Mobile screen size
+                    himage.style.width = "230px";
+                    himage.style.margin = "80px 0 0 00px";
+                } else {
+                    himage.style.width = "320px";
+                    himage.style.margin = "30px 0 0 30px";
+                }
+            }
+        });
+    </script>
+    
 </body>
 
 </html>

@@ -4,13 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Date Picker</title>
+    <title>Sai Music - Check</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/bookingOthers.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
 </head>
 
 <body>
+    <header id="header">
+        <div>
+            <img id="himage" src="{% static 'images/sai music logo.png' %}" alt="">
+            <!-- <h5>DJ Abhi <span>x</span> Rout Broz</h5> -->
+        </div>
+        <div>
+            <a href="{% url 'check_status' %}">Status</a>
+        </div>
+    </header>
     <div class="date-container">
         <div>
             <h1>Select The Date Range<br>to Book</h1>
@@ -20,13 +29,14 @@
                 <p>Click on the starting date of your booking.<br>Next, click on the ending date. All intermediate dates
                     will be automatically selected.<br>If you only need a booking for a single day, simply select that one
                     date only—no need to choose an ending date.</p>
+                    <div class="cntr"><a href="{% url 'booking_others' %}" class="btn">Proceed</a></div>
             </div>
         </div>
         <div class="choose-date" id="calendar">
             <!-- Calendar will be rendered here -->
         </div>
     </div>
-    <div class="cntr"><a href="{% url 'booking_others' %}" class="btn">Proceed</a></div>
+    <div class="cntr"><a href="{% url 'booking_others' %}" class="btn2">Proceed</a></div>
     <div class="caption2">
         <h4>Instructions :</h4>
         <p>Click on the starting date of your booking.<br>Next, click on the ending date. All intermediate dates will be

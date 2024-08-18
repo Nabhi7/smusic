@@ -4,12 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Date Picker</title>
+    <title>Sai Music - Dj</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/booking.css' %}">
 </head>
 
 <body>
+    <header id="header">
+        <div>
+            <img id="himage" src="{% static 'images/sai music logo.png' %}" alt="">
+            <!-- <h5>DJ Abhi <span>x</span> Rout Broz</h5> -->
+        </div>
+        <div>
+            <a href="{% url 'check_status' %}" style="background-color: rgb(136, 88, 0);">Change Date</a>
+        </div>
+    </header>
+    <br><br>
     <h1>DJ</h1>
     <div class="cntr">
         <h3>Choose a date</h3>
@@ -18,14 +28,15 @@
         <div class="dates" id="datesContainer">
             <!-- Dates will be dynamically added here -->
         </div>
-    </div><br>
+    </div>
     <div class="catagory">
         <button class="active">For Marrage</button>
         <button>For Bhasani</button>
     </div>
     <div class="djs">
         <div class="dj">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvXNsw-n5lLryWl8VnyPFe2dLIsFE5yOvlMBkfSEapKZGnr84TSpfuxyLlCB8efmg78U8&usqp=CAU" alt="">
+            <img src="{% static 'images/galary6.jpg' %}" alt="">
+            <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvXNsw-n5lLryWl8VnyPFe2dLIsFE5yOvlMBkfSEapKZGnr84TSpfuxyLlCB8efmg78U8&usqp=CAU" alt=""> -->
             <div class="details">
                 <h1>Vehicle name</h1>
                 <p>description<br>description description<br> description description</p>
@@ -34,7 +45,7 @@
             </div>
         </div>
         <div class="dj">
-            <img src="https://content.jdmagicbox.com/comp/balasore/g2/9999p6782.6782.180913100904.k4g2/catalogue/star-dj-balasore-disc-jockey-itcy1hbu6a-250.jpg" alt="">
+            <img src="{% static 'images/galary6.jpg' %}" alt="">
             <div class="details">
                 <h1>Vehicle name</h1>
                 <p>description<br>description description<br> description description</p>

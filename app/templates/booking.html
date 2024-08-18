@@ -10,9 +10,19 @@
 </head>
 
 <body>
+    <header id="header">
+        <div>
+            <img id="himage" src="{% static 'images/sai music logo.png' %}" alt="">
+            <!-- <h5>DJ Abhi <span>x</span> Rout Broz</h5> -->
+        </div>
+        <div>
+            <a href="{% url 'check_status' %}">Status</a>
+            <a href="{% url 'admin_login' %}">Login</a>
+        </div>
+    </header>
     <br><br>
     <h1>Continue Booking</h1>
-    <br><br>
+    <br>
     <div class="catagory">
         <a href="{% url 'booking_dj' %}" class="cat-dj">
             DJs
