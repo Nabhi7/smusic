@@ -95,6 +95,7 @@ a{
     box-shadow: 1px 1px 50px rgb(61, 61, 61);
     padding: 15px;
     overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.718);
     /* body {
         font-family: 'Roboto', sans-serif;
         background-color: #f8f7fa;
