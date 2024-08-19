@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
 body {
     /* background-color: black; */
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Comfortaa", sans-serif !important;
     margin: 0;
 }
 
@@ -327,6 +329,7 @@ a{
         .cat-oth{
             width: 44%;
             aspect-ratio: 1.1;
+            font-size: 20px;
         }
     }
     .desc{
