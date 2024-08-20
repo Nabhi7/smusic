@@ -139,3 +139,6 @@ def booking_others(request):
     
 def booking_date(request):
     return render(request, 'booking_date.html')
+
+def comming_soon(request):
+    return render(request, 'comming_soon.html')

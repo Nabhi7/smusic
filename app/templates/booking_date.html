@@ -8,6 +8,7 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/bookingOthers.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="{% static 'css/particle.css' %}">
 </head>
 
 <body>
@@ -20,6 +21,7 @@
             <a href="{% url 'check_status' %}">Status</a>
         </div>
     </header>
+    <div id="particles-js"></div>
     <div class="date-container">
         <div>
             <h1>Select The Date Range<br>to Book</h1>
@@ -190,6 +192,8 @@
             Calendar();
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" type="text/javascript"></script>
+    <script src="{% static 'js/particle.js' %}"></script>
 </body>
 
 </html>

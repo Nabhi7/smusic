@@ -6,8 +6,19 @@
     <title>Sai Music - Admin</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/particle.css' %}">
 </head>
 <body>
+    <header id="header">
+        <div>
+            <img id="himage" src="{% static 'images/sai music logo.png' %}" alt="">
+        </div>
+        <div>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'booking' %}" style="background-color: rgb(22, 40, 130);">Book Now</a>
+        </div>
+    </header>
+    <div id="particles-js"></div>
     <div class="row">
         <div class="box">
             <h1>Admin Verification</h1>
@@ -28,5 +39,7 @@
             submitButton.textContent = "Please wait...";
         }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" type="text/javascript"></script>
+    <script src="{% static 'js/particle.js' %}"></script>
 </body>
 </html>

@@ -33,4 +33,6 @@ urlpatterns = [
     path('booking_others/', views.booking_others, name='booking_others'),
     path('booking_date/', views.booking_date, name='booking_date'),
 
+    # Others
+    path('comming_soon/', views.comming_soon, name='comming_soon'),
 ]
