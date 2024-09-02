@@ -258,7 +258,7 @@
             // Detect screen width
             const screenWidth = window.innerWidth || document.documentElement.clientWidth;
     
-            if (scrollPosition > 100) { // Trigger action after scrolling 100px
+            if (scrollPosition > 50) { // Trigger action after scrolling 100px
                 header.style.backgroundColor = 'rgba(0, 0, 0, 0.438)';
                 header.style.backdropFilter = 'blur(10px)';
                 header.style.webkitBackdropFilter = 'blur(10px)';
@@ -266,7 +266,7 @@
                 if (screenWidth <= 768) { // Mobile screen size
                     himage.style.width = "150px";
                 } else {
-                    himage.style.width = "180px";
+                    himage.style.width = "130px";
                 }
                 himage.style.margin = "0 0 0 0";
             } else {
